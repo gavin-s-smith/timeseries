@@ -1,9 +1,8 @@
 from datetime import datetime
-from types import IntType, LongType, DictType
 
 def table_output(data):
     '''Get a table representation of a dictionary.'''
-    if type(data) == DictType:
+    if type(data) == dict:
         data = data.items()
     headings = [ item[0] for item in data ]
     rows = [ item[1] for item in data ]
@@ -23,7 +22,7 @@ def table_output(data):
 
 def to_datetime(time):
     '''Convert `time` to a datetime.'''
-    if type(time) == IntType or type(time) == LongType:
+    if type(time) == int:
         time = datetime.fromtimestamp(time // 1000)
     return time
 

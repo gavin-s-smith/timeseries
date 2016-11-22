@@ -1,4 +1,3 @@
-from types import DictType
 from .lazy_import import LazyImport
 from .utilities import table_output, to_datetime
 from .data_frame import DataFrame
@@ -23,7 +22,7 @@ class TimeSeries(object):
         '''Initialise the time series. `points` is expected to be either a list of
         tuples where each tuple represents a point (timestamp, value), or a dict where
         the keys are timestamps. Timestamps are expected to be in milliseconds.'''
-        if type(points) == DictType:
+        if type(points) == dict:
             points = points.items()
         self.points = sorted(points)
 
