@@ -1,5 +1,4 @@
 from collections import MutableMapping
-from six import iteritems
 from .lazy_import import LazyImport
 from .utilities import table_output, to_datetime
 
@@ -37,7 +36,7 @@ class DataFrame(MutableMapping):
         colours_len = len(colours)
         colours_pos = 0
         plots = len(self.groups)
-        for name, series in self.groups.iteritems():
+        for name, series in self.groups.items():
             colour = colours[colours_pos % colours_len]
             colours_pos += 1
             if not overlay:
