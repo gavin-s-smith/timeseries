@@ -1,4 +1,5 @@
 from collections import MutableMapping
+from six import iteritems
 from .lazy_import import LazyImport
 from .utilities import table_output, to_datetime
 
