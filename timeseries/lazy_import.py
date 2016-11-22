@@ -1,3 +1,5 @@
+from rpy2.robjects.packages import importr
+
 class LazyImport(object): # pragma: no cover
     '''Lazily import modules that aren't required for most functionality
     in the library.'''
@@ -29,7 +31,7 @@ class LazyImport(object): # pragma: no cover
                 raise ImportError('The rpy2 module is required')
             LazyImport.rpy2_module = rpy2
             try:
-                rpy2.forecast = rpy2.robjects.packages.importr('forecast')
+                rpy2.forecast = importr('forecast')
             except:
                 raise ImportError('R and the "forecast" package are required')
             rpy2.ts = rpy2.robjects.r['ts']
